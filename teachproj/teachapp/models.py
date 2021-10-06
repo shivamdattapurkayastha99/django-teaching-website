@@ -13,6 +13,8 @@ class Course(models.Model):
     date=models.DateTimeField(auto_now_add=True)
     resource=models.FileField(upload_to='files/resource')
     length=models.IntegerField(default=0)
+    def __str__(self) -> str:
+        return self.name
 class CourseProperty(models.Model):
     description=models.CharField(max_length=20,null=False)
     course=models.ForeignKey(Course,null=False,on_delete=models.CASCADE)
@@ -31,6 +33,8 @@ class Video(models.Model):
     serial_number=models.IntegerField(default=0,null=False)
     video_id=models.CharField(max_length=20,null=False)
     is_preview=models.BooleanField(default=False)
+    def __str__(self) -> str:
+        return self.title
 
     
 
