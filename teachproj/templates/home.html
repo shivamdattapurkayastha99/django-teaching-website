@@ -1,9 +1,40 @@
 {% extends 'base.html' %}
 {% block title %}
 Home
-{% endblock  %}
+{% endblock %}
 {% block content %}
-{% for i in courses %}
-<p>{{i}},{{i.price}},{{i.discount}}</p>
-{% endfor %}
-{% endblock  %}
+<div class="container-fluid">
+    <br>
+    <div class="row">
+
+    
+    {% for i in courses %}
+    <div class="col mx-auto">
+    <div class="card mx-auto" style="width: 18rem;">
+        <img src="/files/thumbnail/django logo big.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <p class="card-text">{{i.description}}<br>Save:{{i.discount}}%<br>Price:Rs <del>{{i.price}}</del>
+        <br>
+        <span>2</span>
+        </p>
+          
+          
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+        <div class="card-footer">
+            <div class="row no-gutters">
+                <div class="col border-right">
+                    <a href="" class="btn btn-light  btn-block">Enroll Now</a>
+                </div>
+                <div class="col border">
+                    <a href="" class="btn btn-light btn-block">Show more</a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}
