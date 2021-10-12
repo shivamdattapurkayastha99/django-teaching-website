@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load custom_tags %}
+
 {% block title %}
 Home
 {% endblock %}
@@ -11,12 +13,13 @@ Home
     {% for i in courses %}
     <div class="col mx-auto">
     <div class="card mx-auto" style="width: 18rem;">
-        <img src="/files/thumbnail/django logo big.jpg" class="card-img-top" alt="...">
+        <img src="/files/thumbnail/django-logo-big.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{i.name}}</h5>
           <p class="card-text">{{i.description}}<br>Save:{{i.discount}}%<br>Price:Rs <del>{{i.price}}</del>
         <br>
-        <span>2</span>
+        
+        <span>{% calcSp i.price i.discount  %}</span>
         </p>
           
           
