@@ -5,6 +5,7 @@ from django.db import models
 
 class Course(models.Model):
     name=models.CharField(max_length=30)
+    slug=models.CharField(max_length=50,null=True)
     description=models.CharField(max_length=100)
     price=models.IntegerField(default=0)
     discount=models.IntegerField(default=0)

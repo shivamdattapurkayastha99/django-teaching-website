@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load custom_tags %}
+
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <p>Selected Course:{{course.name}}</p>
+    <p>Selected Course:{{course.price}}</p>
+    <p>Selected Course:{{course.description}}</p>
+    <p>Selected Course:{{course.discount}}</p>
+    <p>Selected Course:{{course.video_set.all}}</p>
+    <p>Selected Course:{{course.tag_set.all}}</p>
+    <p>Selected Course:{{course.prerequisite_set.all}}</p>
+    <p>Selected Course:{{course.learning_set.all}}</p>
+    <!-- <h1>Selected Course:{{course.name}}</h1>
+    <h1>Selected Course:{{course.name}}</h1>
+    <h1>Selected Course:{{course.name}}</h1> -->
+</div>
+{% endblock %}
