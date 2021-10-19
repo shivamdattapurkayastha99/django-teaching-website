@@ -9,4 +9,6 @@ urlpatterns = [
     
     path('',views.home,name='home' ),
     path('course/<str:slug>',views.coursepage,name='coursepage' ),
-]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+]
+urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+urlpatterns=urlpatterns+static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
