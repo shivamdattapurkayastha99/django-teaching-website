@@ -6,11 +6,7 @@
 Home
 {% endblock %}
 {% block content %}
-<style>
-  #video-list{
-    overflow-y: scroll;
-  }
-</style>
+
 <div class="container-fluid">
 
   <div>
@@ -18,7 +14,7 @@ Home
       <div class="row">
         <div class="col">
           <div>
-            <iframe id="player" width="100%" height="315" src="https://www.youtube.com/embed/AHjZVppMrk4"
+            <iframe id="player" width="100%" height="315" src="https://www.youtube.com/embed/XXoT_t3nDvU"
               title="YouTube video player" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
@@ -33,7 +29,7 @@ Home
 
           {% for video in course.video_set.all %}
           <div>
-            <ul class="list-group" id="video_list">
+            <ul class="list-group" id="video-list">
               <li class="list-group-item "><a href="#">{{video}}</a></li>
               <li class="list-group-item "><a href="#">{{video}}</a></li>
               <li class="list-group-item "><a href="#">{{video}}</a></li>
@@ -97,6 +93,6 @@ Home
 <script src="{% static 'teachapp/js/course_page.js' %}">
 
 </script>
-
+<link rel="stylesheet" href="{% static 'teachapp/css/scrollbar.css' %}">
 
 {% endblock %}

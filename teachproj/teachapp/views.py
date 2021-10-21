@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
-from .models import Course
+from .models import Course,Video
 # Create your views here.
 def home(request):
     courses=Course.objects.all()
@@ -9,6 +9,8 @@ def home(request):
 def coursepage(request,slug):
     
     course=Course.objects.get(slug=slug)
+    # serial_number=request.GET.get('lecture')
+    # video=Video.objects.get(course=course)
     print(course)
     context={'course':course}
 
