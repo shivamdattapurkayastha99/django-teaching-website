@@ -6,17 +6,13 @@
 Home
 {% endblock %}
 {% block content %}
+<style>
+  #video-list{
+    overflow-y: scroll;
+  }
+</style>
 <div class="container-fluid">
-  <div hidden>
-    <p>Selected Course:{{course.name}}</p>
-    <p>Selected Course:{{course.price}}</p>
-    <p>Selected Course:{{course.description}}</p>
-    <p>Selected Course:{{course.discount}}</p>
-    <p>Selected Course:{{course.video_set.all}}</p>
-    <p>Selected Course:{{course.tag_set.all}}</p>
-    <p>Selected Course:{{course.prerequisite_set.all}}</p>
-    <p>Selected Course:{{course.learning_set.all}}</p>
-  </div>
+
   <div>
     <div class="card p-3">
       <div class="row">
@@ -34,9 +30,24 @@ Home
 
             <li class="list-group-item disabled" aria-disabled="true">Lectures</li>
           </ul>
+
           {% for video in course.video_set.all %}
-          <li class="list-group-item "><a href="#">{{video}}</a></li>
+          <div>
+            <ul class="list-group" id="video_list">
+              <li class="list-group-item "><a href="#">{{video}}</a></li>
+              <li class="list-group-item "><a href="#">{{video}}</a></li>
+              <li class="list-group-item "><a href="#">{{video}}</a></li>
+              <li class="list-group-item "><a href="#">{{video}}</a></li>
+              <li class="list-group-item "><a href="#">{{video}}</a></li>
+              <li class="list-group-item "><a href="#">{{video}}</a></li>
+              <li class="list-group-item "><a href="#">{{video}}</a></li>
+              <li class="list-group-item "><a href="#">{{video}}</a></li>
+              <li class="list-group-item "><a href="#">{{video}}</a></li>
+            </ul>
+            
+          </div>
           {% endfor %}
+
         </div>
       </div>
     </div>
@@ -86,6 +97,6 @@ Home
 <script src="{% static 'teachapp/js/course_page.js' %}">
 
 </script>
-  
-  
+
+
 {% endblock %}
